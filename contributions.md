@@ -12,7 +12,7 @@ submission.
    All authored files written by hand based on guidelines in **CS211_Group_Project_2048_Luhn.pdf**
 
 # Checkpoint 2
-Link: WIP
+Link: https://github.com/isaacLevering/CS211_mw__project_group15/pull/3
  **Author:** PCH0908 | 
    **Reviewer:** ME-Engineer2 | 
    **Merger:** isaacLevering |
