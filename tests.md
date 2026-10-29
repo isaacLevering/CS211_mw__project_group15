@@ -6,14 +6,29 @@ build test.
 Record starting state/input, expected result, actual result, and pass/fail in tests.md. Include board values. Separate the
 deterministic movement result from the later random insertion.
   1. Sliding and merging in each of the four directions, including movement through gaps.
-  2. Three equal tiles and four equal tiles: no tile merges twice in one move.
-  3. A successful slide with no merge: one new 2, one counted move, no score gain.
-  4. An unchanged move: no inserted tile and no changed counters.
-  5. A full board with a possible merge, and a full board with no possible moves.
-  6. Several merges in one move, correct score updates, and reaching the 2048 target.
-  7. Save, change the game, and load: exact restoration of all cells and counters.
-  8. Missing, incomplete, and malformed saves, including an invalid tile: active state is preserved.
-  9. Help, invalid commands, new-game confirmation, and exit behavior.
+    Input: LEFT
+Starting board (adjusted to match examples in part A):
+{0,2, 0, 2, 0},
+		{2, 2, 2, 0, 0},
+		{2, 2, 2, 2, 2},
+		{2, 2, 4, 0, 0},
+		{2, 4, 8, 0, 0},
+Result
+{4,0, 0, 0, 0},
+		{4, 2, 0, 0, 0},
+		{4, 4, 2, 0, 0},
+		{4, 4, 0, 0, 0},
+		{2, 4, 8, 0, 0},
+
+
+  3. Three equal tiles and four equal tiles: no tile merges twice in one move.
+  4. A successful slide with no merge: one new 2, one counted move, no score gain.
+  5. An unchanged move: no inserted tile and no changed counters.
+  6. A full board with a possible merge, and a full board with no possible moves.
+  7. Several merges in one move, correct score updates, and reaching the 2048 target.
+  8. Save, change the game, and load: exact restoration of all cells and counters.
+  9. Missing, incomplete, and malformed saves, including an invalid tile: active state is preserved.
+  10. Help, invalid commands, new-game confirmation, and exit behavior.
 
 ## Luhn Algorithm
 Test input or action               | Expected result
