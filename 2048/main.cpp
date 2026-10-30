@@ -134,8 +134,6 @@ int main(int argc, char* argv[])
             cout<<endl<<"INVALID INPUT..."<<endl;
             print_board(board);
         }
-		
-		//print_board(board);
 
 		
 		if(win==true)           //If you get to 2048, display this while allowing further play
