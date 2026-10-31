@@ -41,3 +41,86 @@ Test input or action               | Expected result
 453201511283036X                   | Reject: non-digit
 Input containing an internal space | Reject: malformed input
 Several checks followed by exit    | Results correct; loop exits cleanly
+
+# TEST RESULT
+## 2048
+	6. a) Full Board with a possible merge.
+			Starting input: {2, 4, 8, 16, 32}, 
+					   		{4, 8, 16, 64, 2}, 
+					   		{2, 4, 8, 16, 32}, 
+					   		{4, 8, 16, 2, 2}, 
+					   		{8, 2, 32, 16, 4}
+			Expected: Game allows continued play.
+			Actual: Game allows continued play.
+			Pass/Fail? PASS
+		b) Full board with no possible merge. 
+			Starting input: {2, 4, 8, 16, 32}, 
+					   		{4, 8, 16, 64, 2}, 
+					   		{2, 4, 8, 16, 32}, 
+					   		{4, 8, 16, 2, 8}, 
+					   		{8, 2, 32, 16, 4}
+			Expected: Game exits with message.
+			Actual: Game exits with message.
+			Pass/Fail? PASS
+	7.  a) Several merges in one move
+			Starting point: {0, 0, 0, 0, 0}, 
+							{0, 0, 0, 0, 4}. 
+							{0, 0, 4, 0, 4}, 
+							{0, 0, 0, 2, 2}, 
+							{0, 0, 0, 8, 32} 
+			Expected: Both merges complete successfully.
+			Actual: Both merges complete successfully.
+			Pass/Fail? PASS
+		b) Correct Score updates: Score 144, Move: 12(board same as above)
+			Expected: Score increases by 12 ((2+2)+(4+4)); Move increases by 1
+			actual: Score increases by 12. Move increases by 1
+			Pass/Fail? PASS	
+		c) Reach 2048 target.
+			Starting input: Score 1024
+							{2, 4, 8, 16, 32} 
+							{8, 8, 16, 1024, 2}, 
+							{0, 2, 4, 1024, 64}, 
+							{0, 4, 8, 64, 8}, 
+							{0, 8, 2, 4, 0} 
+		Expected: Game displays a win message and allows play to continue.
+		Actual: Game displays a win message and allows play to continue.
+		Pass/Fail? PASS
+	8. Starting input: Score: 428, Moves: 29,
+					   {2,8,0,0,0},
+					   {16,0,0,0,0},
+					   {64,0,0,0,0},
+					   {32,2,0,0,0},
+					   {0,0,0,0,0}
+
+		Expected behavior: Save game -> change board -> exit -> load save to above state.
+		Actual result: game loads to original state.
+		Pass/Fail? PASS
+	9. Starting input: Score: 20, Moves: 2,
+						{4,2,4,0,2},
+						{2,0,0,0,0},
+						{4,2,0,0,0},
+						{2,0,0,0,0},
+						{8,2,0,0,0}
+		Expected Result: Game is saved to working directory. Save is changed to include invalid number (e.g. -1). When save is loaded, terminal throws exception and helpful error message and does not load game.
+		Actual Result: Loading save with illegal input removes tile and continues load.
+		Pass/Fail? FAIL
+	10. Starting input: DEFAULT
+		Expected behavior: Help prints help message
+		Actual: Help prints help message
+		Pass/Fail? PASS
+
+		Starting input: DEFAULT.
+		Expected result: invalid commands print error and loop back to board.
+		Actual: invalid commands print error and loop back to board.
+		Pass/Fail? PASS
+
+		Starting input: DEFAULT.
+		Expected behavior: confirm user input before new game is loaded
+		Actual: load immediately
+		Pass/Fail? FAIL
+
+		Starting input: DEFAULT.
+		Expected result: Confirm exit and close game exit behavior.
+		Actual: exit immeditly
+		Pass/Fail? FAIL
+
