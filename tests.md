@@ -8,27 +8,27 @@ deterministic movement result from the later random insertion.
   1. Sliding and merging in each of the four directions, including movement through gaps.
     Input: LEFT
 Starting board (adjusted to match examples in part A):
-{0,2, 0, 2, 0},
+		{0,2, 0, 2, 0},
 		{2, 2, 2, 0, 0},
 		{2, 2, 2, 2, 2},
 		{2, 2, 4, 0, 0},
 		{2, 4, 8, 0, 0},
 Result
-{4,0, 0, 0, 0},
+		{4,0, 0, 0, 0},
 		{4, 2, 0, 0, 0},
 		{4, 4, 2, 0, 0},
 		{4, 4, 0, 0, 0},
 		{2, 4, 8, 0, 0},
 
 
-  3. Three equal tiles and four equal tiles: no tile merges twice in one move.
-  4. A successful slide with no merge: one new 2, one counted move, no score gain.
-  5. An unchanged move: no inserted tile and no changed counters.
-  6. A full board with a possible merge, and a full board with no possible moves.
-  7. Several merges in one move, correct score updates, and reaching the 2048 target.
-  8. Save, change the game, and load: exact restoration of all cells and counters.
-  9. Missing, incomplete, and malformed saves, including an invalid tile: active state is preserved.
-  10. Help, invalid commands, new-game confirmation, and exit behavior.
+  2. Three equal tiles and four equal tiles: no tile merges twice in one move.
+  3. A successful slide with no merge: one new 2, one counted move, no score gain.
+  4. An unchanged move: no inserted tile and no changed counters.
+  5. A full board with a possible merge, and a full board with no possible moves.
+  6. Several merges in one move, correct score updates, and reaching the 2048 target.
+  7. Save, change the game, and load: exact restoration of all cells and counters.
+  8. Missing, incomplete, and malformed saves, including an invalid tile: active state is preserved.
+  9. Help, invalid commands, new-game confirmation, and exit behavior.
 
 ## Luhn Algorithm
 Test input or action               | Expected result
@@ -44,7 +44,64 @@ Several checks followed by exit    | Results correct; loop exits cleanly
 
 # TEST RESULT
 ## 2048
-	6. a) Full Board with a possible merge.
+	1. a) LEFT Starting Input: {0, 4, 0, 4, 0}, 
+							   {0, 0, 0, 0, 0}, 
+							   {2, 0, 2, 0, 2}, 
+							   {0, 0, 0, 0, 0}, 
+							   {2, 2, 2, 2, 2} 
+	Expected Result: Tiles move all way left and merge.
+	Actual Result: Tiles move all way left and merge
+	Pass/Fail? PASS
+	b) RIGHT Starting Input: {0, 4, 0, 4, 0}, 
+							 {0, 0, 0, 0, 0}, 
+							 {2, 0, 2, 0, 2}, 
+							 {0, 0, 0, 0, 0}, 
+							 {2, 2, 2, 2, 2} 
+	Expected Result: Tiles move all way right and merge.
+	Actual Result: Tiles move all way right and merge.
+	Pass/Fail? PASS
+	c) UP Starting Input: {0, 4, 0, 4, 0}, 
+						  {0, 0, 0, 0, 0}, 
+						  {2, 0, 2, 0, 2}, 
+						  {0, 0, 0, 0, 0}, 
+						  {2, 2, 2, 2, 2} 
+	Expected Result: Tiles move all way up and merge.
+	Actual Result: Tiles move all way up and merge.
+	Pass/Fail? PASS
+	d) DOWN Starting Input: {0, 4, 0, 4, 0}, 
+							{0, 0, 0, 0, 0}, 
+							{2, 0, 2, 0, 2}, 
+							{0, 0, 0, 0, 0}, 
+							{2, 2, 2, 2, 2} 
+	Expected Result: Tiles move all way down and merge.
+	Actual Result: Tiles move all way down and merge.
+	Pass/Fail? PASS
+	2. a). Starting Input: {0, 4, 4, 4, 0}, 
+					   	   {0, 0, 0, 0, 0}, 
+					       {2, 2, 2, 2, 0}, 
+					       {0, 0, 0, 0, 0}, 
+					       {2, 2, 2, 2, 2} 
+	Expected Result: 4s merge to become 8, 4. 
+	Actual Result: 4s merge to become 8, 4. 
+	Pass/Fail? PASS
+	b). Starting Input: {0, 4, 4, 4, 0}, 
+					    {0, 0, 0, 0, 0}, 
+					    {2, 2, 2, 2, 0}, 
+					    {0, 0, 0, 0, 0}, 
+					    {2, 2, 2, 2, 2} 
+	Expected Result: 2s merge to become 4, 4. 
+	Actual Result: s merge to become 4, 4. 
+	Pass/Fail? PASS
+	3. Starting Input: {0, 2, 8, 4, 0}, 
+					   {0, 0, 0, 0, 0}, 
+					   {2, 4, 2, 0, 0}, 
+					   {0, 0, 0, 0, 0}, 
+					   {0, 0, 0, 0, 0} 
+	Expected Result: Tiles move left with no merge. New 2 randomly appears
+	Actual Result: Tiles move left with no merge. New 2 randomly appears
+	Pass/Fail? PASS
+	4. Not applicable in this round of testing.
+	5. a) Full Board with a possible merge.
 			Starting input: {2, 4, 8, 16, 32}, 
 					   		{4, 8, 16, 64, 2}, 
 					   		{2, 4, 8, 16, 32}, 
@@ -62,7 +119,7 @@ Several checks followed by exit    | Results correct; loop exits cleanly
 			Expected: Game exits with message.
 			Actual: Game exits with message.
 			Pass/Fail? PASS
-	7.  a) Several merges in one move
+	6.  a) Several merges in one move
 			Starting point: {0, 0, 0, 0, 0}, 
 							{0, 0, 0, 0, 4}. 
 							{0, 0, 4, 0, 4}, 
@@ -85,7 +142,7 @@ Several checks followed by exit    | Results correct; loop exits cleanly
 		Expected: Game displays a win message and allows play to continue.
 		Actual: Game displays a win message and allows play to continue.
 		Pass/Fail? PASS
-	8. Starting input: Score: 428, Moves: 29,
+	7. Starting input: Score: 428, Moves: 29,
 					   {2,8,0,0,0},
 					   {16,0,0,0,0},
 					   {64,0,0,0,0},
@@ -95,7 +152,7 @@ Several checks followed by exit    | Results correct; loop exits cleanly
 		Expected behavior: Save game -> change board -> exit -> load save to above state.
 		Actual result: game loads to original state.
 		Pass/Fail? PASS
-	9. Starting input: Score: 20, Moves: 2,
+	8. Starting input: Score: 20, Moves: 2,
 						{4,2,4,0,2},
 						{2,0,0,0,0},
 						{4,2,0,0,0},
@@ -104,7 +161,7 @@ Several checks followed by exit    | Results correct; loop exits cleanly
 		Expected Result: Game is saved to working directory. Save is changed to include invalid number (e.g. -1). When save is loaded, terminal throws exception and helpful error message and does not load game.
 		Actual Result: Loading save with illegal input removes tile and continues load.
 		Pass/Fail? FAIL
-	10. Starting input: DEFAULT
+	9. Starting input: DEFAULT
 		Expected behavior: Help prints help message
 		Actual: Help prints help message
 		Pass/Fail? PASS
