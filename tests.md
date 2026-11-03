@@ -180,4 +180,38 @@ Several checks followed by exit    | Results correct; loop exits cleanly
 		Expected result: Confirm exit and close game exit behavior.
 		Actual: exit immeditly
 		Pass/Fail? FAIL
+## Luhn
+	1. Entered value: 4532015112830366
+	   Expected result:  Correct format; checksum passes
+	   Actual result:
+	   Pass/Fail?
+	2. Entered value: 4532015112830367
+	   Expected result:  Correct format; checksum fails
+	   Actual result:
+	   Pass/Fail?
+	3. Entered value: 0000000000000018
+	   Expected result: Correct format; leading zeros preserved; passes
+	   Actual result:
+	   Pass/Fail?
+	4. Entered value: 453201511283036
+	   Expected result: Reject: 15 digits
+	   Actual result:
+	   Pass/Fail?
+	5. Entered value: 45320151128303666
+	   Expected result: Reject: 17 digits
+	   Actual result:
+	   Pass/Fail?
+	6. Entered value: 453201511283036X
+	   Expected result: Reject: non-digit
+	   Actual result:
+	   Pass/Fail?
+	7. Entered value: Input containing an internal space
+	   Expected result: Reject: malformed input
+	   Actual result:
+	   Pass/Fail?
+	8. Entered value: Several checks followed by exit
+	   Expected result: Results correct; loop exits cleanly
+	   Actual result:
+	   Pass/Fail?
+		
 
