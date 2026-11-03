@@ -31,7 +31,7 @@ Link: https://github.com/isaacLevering/CS211_mw__project_group15/pull/4
    Note: Included save/load features from Checkpoint 4. 
 
    ## Checkpoint 3a
-   Link: //TODO
+   Link: https://github.com/isaacLevering/CS211_mw__project_group15/pull/5
     **Author:** isaacLevering | 
     **Reviewer:** PCH0908 | 
     **Merger:** ME-Engineer2 |
