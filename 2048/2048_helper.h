@@ -284,10 +284,14 @@ int highest_tile(int board[][5], int& high, int numrows=5) //finds the highest t
     }
     return high; //returns the largest number found on the board
 }
-    
-    
-    
-    
-    
-    
 
+bool valid_tile(int value) // Checks whether a tile is 0 or positive for validation
+{
+    if (value == 0)
+        return true;
+
+    if (value < 0)
+        return false;
+
+    return (value & (value - 1)) == 0;
+}
