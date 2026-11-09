@@ -48,6 +48,12 @@ Link: https://github.com/isaacLevering/CS211_mw__project_group15/pull/6
    Checked pass/fail criteria, improper length, illegal characters. Code written manually by hand using guidelines in      **CS211_Group_Project_2048_Luhn.pdf**; Claude AI used to solve logic for alphabetic character check loop: ln 86-103 luhn.cpp.
    Code checked by hand using VS Code
 
-   
+   # Checkpoint 6
+Link: https://github.com/isaacLevering/CS211_mw__project_group15/pull/6
+    **Author:** PCH0908 | 
+    **Reviewer:** ME-Engineer2 | 
+    **Merger:** isaacLevering |
+
+   Updated all documents to be ready for submission.
    
 
