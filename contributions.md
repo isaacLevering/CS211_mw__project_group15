@@ -49,7 +49,7 @@ Link: https://github.com/isaacLevering/CS211_mw__project_group15/pull/6
    Code checked by hand using VS Code
 
    # Checkpoint 6
-Link: https://github.com/isaacLevering/CS211_mw__project_group15/pull/6
+Link: https://github.com/isaacLevering/CS211_mw__project_group15/tree/PR-6
     **Author:** PCH0908 | 
     **Reviewer:** ME-Engineer2 | 
     **Merger:** isaacLevering |
