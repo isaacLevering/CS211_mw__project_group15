@@ -1,0 +1,169 @@
+Dry-Run
+	main()
+		start not_valid card_number[20]  card_number[i] i strenlen(card_number)
+		n     ######### ###############  ############## # 20
+		y     				
+			     		4532015112830366   
+							          					  16
+														0		    
+												4
+														1
+												5		
+														2
+												3
+														3
+												2
+														4
+												0
+														5
+												1
+														6
+												5
+														7
+												1
+														8
+												1
+														9
+												2
+														10
+												8
+														11
+												3
+														12
+												0		
+														13
+												3
+														14
+												6
+														15
+												6
+														16
+	checkLuhn()
+			card_num[16]	 card_number[i] i card_number[i] i card_number[i] i luhn_sum 
+			4532015112830366 #############  # #############  # ############## # ######## 
+					                		0		    
+										4
+											1
+										5		
+											2
+										3
+											3
+										2
+											4
+										0
+											5
+										1
+											6
+										5
+											7
+										1
+											8
+										1
+											9
+										2
+											10
+										8
+											11
+										3
+											12
+										0		
+											13
+										3
+											14
+										6
+											15
+										6
+											16
+															0		    
+														8
+															1
+														5		
+															2
+														6
+															3
+														2
+															4
+														0
+															5
+														1
+															6
+														10
+															7
+														1
+															8
+														2
+															9
+														2
+															10
+														16
+															11
+														3
+															12
+														0		
+															13
+														3
+															14
+														12
+															15
+														6
+															16
+																			0		    
+																		8
+																				8
+																			1
+																		5		
+																				13
+																			2
+																		6
+																				19
+																			3
+																		2
+																				21
+																			4
+																		0
+																				21
+																			5
+																		1
+																				22
+																			6
+																		1
+																				23
+																			7
+																		1
+																				24
+																			8
+																		2
+																				26
+																			9
+																		2
+																				28
+																			10
+																		7
+																				35
+																			11
+																		3
+																				38
+																			12
+																		0		
+																				38
+																			13
+																		3
+																				41
+																			14
+																		3
+																				44
+																			15
+																		6
+																				50
+																			16
+-----------------------------------------------------------------------------------------
+The traversal order of this program is to access each element in the passed array in turn
+(with the exception of the doubling loop which accesses every 2nd element in a decreasing order).
+
+The final modulo check will check to see if luhn_sum is divisible by 10. If the luhn_sum is divisible
+by 10 (remainder 0) the function is true and the card is valid, otherwise it is invalid.
+						
+														
+												
+
+						
