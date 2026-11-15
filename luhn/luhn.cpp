@@ -10,8 +10,6 @@ void checkLuhn(char card_num[16])
         for (int i = 0; i != 16; i++)
         {
         card_number[i] = card_num[i] - 48 ;
-
-        std::cout<<card_number[i]<<", ";
         } 
 
     int luhn_sum = 0; 
@@ -30,9 +28,7 @@ void checkLuhn(char card_num[16])
 
     }
 
-    std::cout<<std::endl;
-    for (int i = 0; i< 16; i++)
-            std::cout<<card_number[i]<<", "<<std::endl;
+   
 
     for (int i = 0; i < 16; i++)
     {
@@ -57,7 +53,6 @@ int main()
 {
     //INPUT
     char start = 'n'; // char for user to start/loop Luhn. 
-    bool valid = false; //counter for illegal input while
 
     std::cout<<"Welcome to Luhn Algorith! Would you like to check a card number?";
     std::cout<<std::endl<<"[y] to start               [n] to exit"<<std::endl;
@@ -74,14 +69,13 @@ int main()
 
         
         //Ask user for correct number if length not 16
-        //TODO: Add invalid char checking, correct internal space checking
         while (strlen(card_number) != 16)
         {
             
             std::cout<<"Sorry, invalid number. Please try again: ";
             std::cin>>card_number;
         }
-        std::cout<<card_number;
+        
 
        while (true)
        {
